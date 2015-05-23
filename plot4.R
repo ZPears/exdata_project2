@@ -1,9 +1,9 @@
 #load data
-pmData <- readRDS("summarySCC_PM25.rds")
-classCode <- readRDS("Source_Classification_Code.rds")
+#pmData <- readRDS("summarySCC_PM25.rds")
+#classCode <- readRDS("Source_Classification_Code.rds")
 
 #create main table
-data <- merge(pmData, classCode, by="SCC")
+#data <- merge(pmData, classCode, by="SCC")
 coalCombData <- subset(data, grepl("Coal", data$EI.Sector))
 coalCombData$EI.Sector <- factor(coalCombData$EI.Sector)
 sums <- as.numeric(rowsum(coalCombData$Emissions, coalCombData$year))
